@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express')
 
-export default gql`
+module.exports = gql`
   scalar ISODate
   type Record {
     id: ID!
@@ -11,10 +11,10 @@ export default gql`
 
   extend type Query {
     record(id: ID!): Record!
-    records: [Records!]!
+    records: [Record!]!
   }
 
   extend type Mutation {
-    createRecord(value: !Float, categoryId: ID!): Record!
+    createRecord(value: Float!, categoryId: ID!): Record!
   }
 `

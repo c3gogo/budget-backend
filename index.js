@@ -1,21 +1,13 @@
 const express = require('express')
-const { ApolloServer, gql } = require('apollo-server-express')
+const { ApolloServer } = require('apollo-server-express')
 const mongoose = require('mongoose')
+const schemas = require('./schemas')
+const resolvers = require('./resolvers')
+const cors = require('cors')
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
-
-const resolvers = {
-  Query: {
-    hello: () => 'Hello World!'
-  }
-}
-
-const server = new ApolloServer({ typeDefs, resolvers})
+const server = new ApolloServer({ typeDefs: schemas, resolvers})
 const app = express()
+app.use(cors())
 server.applyMiddleware({ app })
 
 const url = 'mongodb://localhost:27017/budgetdb'

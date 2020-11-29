@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server-express')
 
-export default gql`
+module.exports = gql`
+  scalar Record
   type Category {
     id: ID!
     name: String!
@@ -13,6 +14,6 @@ export default gql`
   }
 
   extend type Mutation {
-    createCategory(name: !String): Category!
+    createCategory(name: String!): Category!
   }
 `
