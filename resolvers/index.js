@@ -1,3 +1,4 @@
 const categoryResolvers = require('./categoryResolvers')
+const recordResolvers = require('./recordResolvers')
 
-module.exports = [ categoryResolvers ]
+module.exports = [ categoryResolvers, recordResolvers ]

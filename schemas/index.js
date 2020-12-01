@@ -1,4 +1,5 @@
 const categorySchema = require('./categorySchema')
+const recordSchema = require('./recordSchema')
 const { gql } = require('apollo-server-express')
 
 const linkSchema = gql`
@@ -9,4 +10,4 @@ const linkSchema = gql`
     _: Boolean
   }
 `
-module.exports = [ linkSchema, categorySchema ]
+module.exports = [ linkSchema, categorySchema, recordSchema ]

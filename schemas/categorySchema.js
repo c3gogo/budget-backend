@@ -1,7 +1,6 @@
 const { gql } = require('apollo-server-express')
 
 module.exports = gql`
-  scalar Record
   type Category {
     id: ID!
     name: String!
