@@ -14,5 +14,6 @@ module.exports = gql`
 
   extend type Mutation {
     createCategory(name: String!): Category!
+    deleteCategory(id: ID!): Category!
   }
 `
