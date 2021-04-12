@@ -21,13 +21,12 @@ module.exports = {
     },
     deleteCategory: async (parent, { id }) => {
       const category = await categoryModel.findByIdAndRemove({ _id: id }).exec()
-      console.log(category)
       return category
     }
   },
 
   Category: {
-    records: async({id}) => {
+    records: async ({id}) => {
       const records = await recordModel.find({ category: id }).exec()
       return records
     }

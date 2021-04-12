@@ -16,5 +16,6 @@ module.exports = gql`
 
   extend type Mutation {
     createRecord(value: Float!, categoryId: ID!): Record!
+    deleteRecord(id: ID!): Record!
   }
 `
