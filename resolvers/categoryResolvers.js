@@ -21,6 +21,7 @@ module.exports = {
     },
     deleteCategory: async (parent, { id }) => {
       const category = await categoryModel.findByIdAndRemove({ _id: id }).exec()
+      await recordModel.deleteMany({ category: id }).exec()
       return category
     }
   },
