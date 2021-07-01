@@ -5,6 +5,10 @@ const situationSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
+  timestamp: {
+    type: Date,
+    required: true
+  },
   timestampStart: {
     type: Date,
     required: true
@@ -13,11 +17,13 @@ const situationSchema = new mongoose.Schema({
     type: Date,
     required: true
   },
-  categories: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'category',
-    required: true
-  }
+  categories: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'category',
+      required: true
+    }
+  ]
 })
 
 const situation = mongoose.model('situation', situationSchema)

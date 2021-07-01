@@ -4,6 +4,7 @@ module.exports = gql`
   type Situation {
     id: ID!
     value: Float!
+    timestamp: ISODate!
     timestampStart: ISODate!
     timestampEnd: ISODate!
     categories: [Category!]!
